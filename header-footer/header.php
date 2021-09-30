@@ -10,8 +10,8 @@
         <div class="contain_all">
             <header>
 				<!-- Logo GBAF -->
-				<a class="header-logo" href="/espace-membre/accueil.php">
-					<img id="logo" src="images/logo.png" alt="Logo GBAF" />
+				<a class="header-logo" href="espace-membre/accueil.php">
+					<img id="logo" src="../images/logo.png" alt="Logo GBAF" />
 				</a>
 
                 <?php // affiche le profil uniquement si un utilsateur est connecté
@@ -23,7 +23,7 @@
                 <ul class="header-profil">
                     <!-- Nom Prenom -->
                     <li class="profil_nom">
-                        <img id="co" src="images/login.jpg"/>
+                        <img id="co" src="../images/login.jpg"/>
                         <p> <?php echo htmlspecialchars($_SESSION['nom']); ?> </p>
                         <p> <?php echo htmlspecialchars($_SESSION['prenom']); ?> </p>
                     </li>
