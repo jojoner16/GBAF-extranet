@@ -245,6 +245,7 @@ footer p
    	width: 100%;
 	height: 40em;
    	background: url('images/banque.jpg') center /cover no-repeat;
+	background-attachment: fixed;
 }
 .GBAF h1
 {
