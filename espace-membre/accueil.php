@@ -16,7 +16,6 @@
     
     <body>
         <?php
-            require_once '../header-footer/header.php';
 
             // REDIRECTION: NON CONNECTÉ
             if (!isset($_SESSION['nom']) && !isset($_SESSION['prenom']) && !isset($_SESSION['id_user'])) 
@@ -46,9 +45,10 @@
         
                   <!-- Page accueil -->
         <main>
-        
+            
             <!-- Section Présentation GBAF -->
             <section class="GBAF">
+                <?php require_once '../header-footer/header.php';?>
                 <h1>GBAF (Groupement Banque Assurance Français)</h1>
 
                 <div class="text">
@@ -71,14 +71,14 @@
                         Même s’il existe une forte concurrence entre ces
                         entités, elles vont toutes travailler de la même façon
                         pour gérer près de 80 millions de comptes sur le
-                        territoire national. <br />Le GBAF est le représentant
+                        territoire national. <br/>Le GBAF est le représentant
                         de la profession bancaire et des assureurs sur tous  les
                         axes de la réglementation financière française. Sa
                         mission est de promouvoir l'activité bancaire à
                         l’échelle nationale. C’est aussi un interlocuteur
                         privilégié des pouvoirs publics.
                     </p>
-                    <br />
+                    <br/>
                     <p>
                         Les produits et services bancaires sont nombreux et très
                         variés. Afin de renseigner au mieux les clients, les
@@ -86,7 +86,7 @@
                         France (agents, chargés de clientèle, conseillers
                         financiers, etc.) recherchent sur Internet des
                         informations portant sur des produits bancaires et des
-                        financeurs, entre autres. <br />Aujourd’hui, il n’existe
+                        financeurs, entre autres. <br/>Aujourd’hui, il n’existe
                         pas de base de données pour chercher ces informations
                         de manière fiable et rapide ou pour donner son avis sur
                         les partenaires et acteurs du secteur bancaire, tels que
@@ -96,7 +96,7 @@
                         répertoriant un grand nombre d’informations sur les
                         partenaires et acteurs du groupe ainsi que sur les
                         produits et services  bancaires et financiers.
-                        <br />Chaque salarié pourra ainsi poster un commentaire
+                        <br/>Chaque salarié pourra ainsi poster un commentaire
                         et donner son avis.
                     </p>
                 </div>
@@ -110,7 +110,23 @@
             <section class="acteurs">
                 <h2>Acteurs et partenaires du système bancaire français</h2>
 
-                <p class="text">texte acteurs et partenaires</p>
+                <div class="text1">
+                    <p>
+                        À l’échelle nationale, ces réseaux gèrent, dans un contexte de forte concurrence, plus de 80 % des quelque 73 millions de comptes courants. Ces réseaux sont pour la plupart fortement internationalisés.
+                    </p>
+                    <br/>
+                    <p>
+                        Les grands groupes français sont présents dans tous les métiers de la banque :
+                    </p>
+                    <ul>
+                        <li>banque de détail </li>
+                        <li>banque de financement et d’investissement (BFI).</li>
+                    </ul>
+                    <br/>
+                    <p>
+                        L’exercice des activités bancaires, des services d’investissement et des services de paiement est réservé aux entreprises bénéficiant d’un agrément et soumis à une surveillance particulière par l’Autorité de Contrôle Prudentiel et de Résolution (ACPR). Globalement au 1er janvier 2012, on comptait 655 établissements de crédit agréés en France par l’Autorité de Contrôle Prudentiel et de Résolution.
+                    </p>
+                </div>
 
                 <nav class="acteurs_list">
                         <ul>
