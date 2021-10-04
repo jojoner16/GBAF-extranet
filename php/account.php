@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    require_once 'fonction.php';
+    require_once ('fonction.php');
 
     // FONCTION pour effacer les valeurs de session 
     function unsetPreviousSession()
