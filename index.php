@@ -1,7 +1,7 @@
 <?php 
     //session_start();
     // Chargement des fonctions génériques
-    require_once 'php/fonction.php';
+    require_once ('php/fonction.php');
     $pdo = connect_bdd();
 ?>
 
