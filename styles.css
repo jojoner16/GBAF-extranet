@@ -5,19 +5,18 @@ html, body
 	width: 100%;
 	height: 100%;
 }
-/* --------Formulaire de connexion/inscription --------*/
+            /* --------Formulaire de connexion/inscription/modification/mp --------*/
 
 /* Main */
 .inscription-connexion 
 {
-    /* grid-column: 1/4 ; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
     width: 100%;
  	height: 100%;
-	/* margin: 0; */
 	background-color: rgba(0, 0, 0, 0.8);
+	padding-top: 2%;
 }
 
 /* Section */
@@ -204,6 +203,9 @@ header
 	width: 1.8em;
 	margin: 0;
 	background: url(images/login.jpg) center/contain no-repeat;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+
 }
 /* Nom Prénom */
 .profil_nom 
