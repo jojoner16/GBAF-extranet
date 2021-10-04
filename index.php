@@ -6,7 +6,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,10 +16,9 @@
         <title>GBAF connexion</title>
     </head>
     
-    <body>
+    
         <?php
-            require_once 'header-footer/header.php';
-            require_once 'php/account.php';
+            require_once ('php/account.php');
 
             // REDIRECTION: CONNECTÉ
             if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
@@ -67,34 +66,40 @@
                 header('Location: index.php'); exit;
             }
         
+        // NON CONNECTÉ - page de connexion
+        if (!isset($_SESSION['nom']) && !isset($_SESSION['prenom']) && !isset($_SESSION['id_user'])) 
+        {
+            require_once('header-footer/header.php');
         ?>
 
-                    <!-- index html -->
-    <main class="inscription-connexion">
-        <div class="form_container">
-            <fieldset>
-                <legend>Se connecter :</legend>
-                    <span class="message">
-                        <?php echo $message; ?>
-                    </span>
-                    <form method="post" action="index.php">
-                        <p>
-                            <label for="pseudo">Identifiant : </label>
-                            <input type="text" id="pseudo" name="username"/>
+                        <!-- index html -->
+        <main class="inscription-connexion">
+            <div class="form_container">
+                <fieldset>
+                    <legend>Se connecter :</legend>
+                        <span class="message">
+                            <?php echo $message; ?>
+                        </span>
+                        <form method="post" action="index.php">
+                            <p>
+                                <label for="pseudo">Identifiant : </label>
+                                <input type="text" id="pseudo" name="username"/>
 
-                            <label for="mp">Mot de passe : </label>
-                            <input type="password" id="mp" name="password"/>
+                                <label for="mp">Mot de passe : </label>
+                                <input type="password" id="mp" name="password"/>
 
-                            <input class="button-envoyer" type="submit" name="dataSubmit" value="Connexion"/>
-                                        
-                            <span>Les champs indiqués par une <em>*</em> sont obligatoires</span>    
-                        </p>
-                    </form>
-                <a href="mp.php"> mot de passe oublié ? </a>
-                <a href="inscription.php"> créer un compte </a>
-            </fieldset>
-        </div>
-    </main>
-        <?php require_once 'header-footer/footer.php'?>
-    </body>
-</html>
+                                <input class="button-envoyer" type="submit" name="dataSubmit" value="Connexion"/>
+                                            
+                                <span>Les champs indiqués par une <em>*</em> sont obligatoires</span>    
+                            </p>
+                        </form>
+                    <a href="mp.php"> mot de passe oublié ? </a>
+                    <a href="inscription.php"> créer un compte </a>
+                </fieldset>
+            </div>
+        </main>
+        <?php 
+            require_once ('header-footer/footer.php');
+        }
+        ?>
+ 
