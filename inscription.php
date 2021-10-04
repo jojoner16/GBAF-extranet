@@ -1,7 +1,7 @@
 <?php 
     //session_start();
     // Chargement des fonctions génériques
-    require_once 'php/fonction.php';
+    require_once ('php/fonction.php');
     $pdo = connect_bdd();
 ?>
 
@@ -18,8 +18,8 @@
     
     <body>
         <?php
-            require_once 'header-footer/header.php';
-            require_once 'php/account.php';
+            // require_once ('header-footer/header.php');
+            require_once ('php/account.php');
 
             // REDIRECTION: CONNECTÉ
             if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
@@ -85,6 +85,10 @@
                         $message = USERNAME_EXIST;
                     }
             }
+    // NON CONNECTÉ - page inscription
+if (!isset($_SESSION['nom']) && !isset($_SESSION['prenom']) && !isset($_SESSION['id_user'])) 
+{
+    require_once('header-footer/header.php');
         ?>
 
                 <!-- Page d'inscription HTML -->
@@ -137,6 +141,7 @@
             </fieldset>
         </div>
     </main>
-        <?php require_once 'header-footer/footer.php'?>
-    </body>
-</html>
+        <?php
+            require_once ('header-footer/footer.php');
+}
+        ?>
