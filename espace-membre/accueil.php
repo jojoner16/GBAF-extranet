@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once '../php/fonction.php';
+    require_once ('../php/fonction.php');
     $pdo = connect_bdd();
 ?>
 <!DOCTYPE html>
@@ -41,6 +41,12 @@
                 }
                 $req_data_acteur->closeCursor();
             }
+    // CONNECTÉ:
+if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
+{
+
+    require_once('../header-footer/header.php');
+    
         ?>
         
                   <!-- Page accueil -->
@@ -48,7 +54,6 @@
             
             <!-- Section Présentation GBAF -->
             <section class="GBAF">
-                <?php require_once '../header-footer/header.php';?>
                 <h1>GBAF (Groupement Banque Assurance Français)</h1>
 
                 <div class="text">
@@ -137,6 +142,8 @@
             </section>
         </main>
    
-        <?php require_once '../header-footer/footer.php'?>
-    </body>
-</html>
+    <?php 
+        require_once ('../header-footer/footer.php');
+}
+    ?>
+  
