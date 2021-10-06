@@ -1,7 +1,7 @@
 <?php 
     //session_start();
     // Chargement des fonctions génériques
-    require_once ('php/fonction.php');
+    require_once 'php/fonction.php';
     $pdo = connect_bdd();
 ?>
 
@@ -25,9 +25,9 @@
 				</a>
             </header>
         </div>
-        
+
         <?php
-            require_once ('php/account.php');
+            require_once 'php/account.php';
 
             // REDIRECTION: CONNECTÉ
             if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
@@ -127,7 +127,7 @@
                         <input type="text" id="question" name="question"/>
 
                         <label for="reponse">
-                            La réponse à votre question : 
+                            La réponse a votre question : 
                         </label>
                         <input type="text" id="reponse" name="reponse"/>
 
@@ -147,5 +147,5 @@
     </main>
     </body>
         <?php
-            require_once ('header-footer/footer.php');
+            require_once 'header-footer/footer.php';
         ?>
