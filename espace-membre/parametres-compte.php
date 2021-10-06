@@ -1,7 +1,7 @@
 <?php
-require_once ('../php/fonction.php');
+require_once '../php/fonction.php';
 $pdo = connect_bdd();
-require_once('../php/account.php');
+require_once '../php/account.php';
 
 // REDIRECTION: NON CONNECTÉ
 if (!isset($_SESSION['nom']) && !isset($_SESSION['prenom']) && !isset($_SESSION['id_user'])) 
@@ -77,7 +77,7 @@ if (isset($_POST['dataSubmit']))
 // CONNECTÉ:
 if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
 {
-    require_once('../header-footer/header.php');
+    require_once '../header-footer/header.php';
                     
     ?>
                                                                         <!-- HTML FORMULAIRE INSCRIPTION  -->
@@ -106,7 +106,7 @@ if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id
                         <label for="question">Votre question secrète : </label>
                         <input type="text" id="question" name="question" value="<?php defaultInputValue('question', $dataAccountOld['question']);?>"/>
 
-                        <label for="reponse">La réponse à votre question : </label>
+                        <label for="reponse">La réponse a votre question : </label>
                         <input type="text"  id="reponse"  name="reponse" value=""/>
 
                         <label for="mp">Entrez votre mot de passe: </label>
@@ -128,6 +128,6 @@ if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id
     </main>
 
     <?php
-        require_once('../header-footer/footer.php');
+        require_once '../header-footer/footer.php';
 }
     ?>
