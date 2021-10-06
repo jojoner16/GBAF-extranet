@@ -1,7 +1,7 @@
 <?php 
     //session_start();
     // Chargement des fonctions génériques
-    require_once ('php/fonction.php');
+    require_once 'php/fonction.php';
     $pdo = connect_bdd();
 ?>
 
@@ -26,7 +26,7 @@
         </div>
     
         <?php
-            require_once ('php/account.php');
+            require_once 'php/account.php';
 
             // REDIRECTION: CONNECTÉ
             if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
@@ -103,6 +103,6 @@
         </main>
     </body>
         <?php 
-            require_once ('header-footer/footer.php');
+            require_once 'header-footer/footer.php';
         ?>
  
