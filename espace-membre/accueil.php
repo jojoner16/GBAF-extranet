@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once ('../php/fonction.php');
+    require_once '../php/fonction.php';
     $pdo = connect_bdd();
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
 if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
 {
 
-    require_once('../header-footer/header.php');
+    require_once '../header-footer/header.php';
     
         ?>
         
@@ -143,7 +143,7 @@ if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id
         </main>
    
     <?php 
-        require_once ('../header-footer/footer.php');
+        require_once '../header-footer/footer.php';
 }
     ?>
   
