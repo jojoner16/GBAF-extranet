@@ -36,7 +36,7 @@
                     echo '<img src="../images/'.$dataPartenaires['logo'].'">';
                     echo '<h3>' . $dataPartenaires['acteur'] . '</h3>';
                     echo '<div class="acteur-seul_description"><p>' . $dataPartenaires['firstLineDescription'] . ' (...)</p></div>';
-                    echo '<a href="/espace-membre/partenaire.php?id_acteur=' . $dataPartenaires['id_acteur'] . ' ">Lire la suite</a> ';
+                    echo '<a href="../espace-membre/partenaire.php?id_acteur=' . $dataPartenaires['id_acteur'] . ' ">Lire la suite</a> ';
                     echo '</li>';
                 }
                 $req_data_acteur->closeCursor();
