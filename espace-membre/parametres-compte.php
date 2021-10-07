@@ -1,85 +1,85 @@
 <?php
-require_once '../php/fonction.php';
-$pdo = connect_bdd();
-require_once '../php/account.php';
+    require_once '../php/fonction.php';
+    $pdo = connect_bdd();
+    require_once '../php/account.php';
 
-// REDIRECTION: NON CONNECTÉ
-if (!isset($_SESSION['nom']) && !isset($_SESSION['prenom']) && !isset($_SESSION['id_user'])) 
-{
-    header('Location: ../index.php');
-    exit();
-}
-
-// Cherche si l'utilisateur existe dans la BDD 
-$dataAccountOld = searchUser($pdo, $_SESSION['username']);
-
-// si on envoie le formulaire
-if (isset($_POST['dataSubmit'])) 
-{
-    $dataAccount = searchUser($pdo, $_POST['username']);
-
-    // Si l'username n'existe pas
-    if (!$dataAccount OR $dataAccountOld['username'] == $_POST['username']) 
+    // REDIRECTION: NON CONNECTÉ
+    if (!isset($_SESSION['nom']) && !isset($_SESSION['prenom']) && !isset($_SESSION['id_user'])) 
     {
-        // Verification tous les champs ont été remplis
-        if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['question']) && !empty($_POST['reponse']) && !empty($_POST['password']) && !empty($_POST['username'])) 
+        header('Location: ../index.php');
+        exit();
+    }
+
+    // Cherche si l'utilisateur existe dans la BDD 
+    $dataAccountOld = searchUser($pdo, $_SESSION['username']);
+
+    // si on envoie le formulaire
+    if (isset($_POST['dataSubmit'])) 
+    {
+        $dataAccount = searchUser($pdo, $_POST['username']);
+
+        // Si l'username n'existe pas
+        if (!$dataAccount OR $dataAccountOld['username'] == $_POST['username']) 
         {
-            // et que le mot de passe est correct
-            $isPasswordCorrect = password_verify($_POST['password'], $dataAccountOld['password']);
-
-            if ($isPasswordCorrect) 
+            // Verification tous les champs ont été remplis
+            if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['question']) && !empty($_POST['reponse']) && !empty($_POST['password']) && !empty($_POST['username'])) 
             {
-                $reponseHashed = password_hash($_POST['reponse'], PASSWORD_DEFAULT);
+                // et que le mot de passe est correct
+                $isPasswordCorrect = password_verify($_POST['password'], $dataAccountOld['password']);
 
-                // Change les infos de la BDD
-                $req_update_infos_user = $pdo->prepare('UPDATE user SET username = :username, nom = :nom,  prenom = :prenom, question = :question, reponse = :reponse WHERE id_user = :id_user');
+                if ($isPasswordCorrect) 
+                {
+                    $reponseHashed = password_hash($_POST['reponse'], PASSWORD_DEFAULT);
 
-                $req_update_infos_user->execute(array(
-                    'username' => ($_POST['username']),
-                    'nom' => ($_POST['nom']),
-                    'prenom' => ($_POST['prenom']),
-                    'question' => ($_POST['question']),
-                    'reponse' => $reponseHashed,
-                    'id_user' => $dataAccountOld['id_user']
-                ));
+                    // Change les infos de la BDD
+                    $req_update_infos_user = $pdo->prepare('UPDATE user SET username = :username, nom = :nom,  prenom = :prenom, question = :question, reponse = :reponse WHERE id_user = :id_user');
 
-                $usernameNew = $_POST['username'];
-                $req_update_infos_user->closeCursor();
+                    $req_update_infos_user->execute(array(
+                        'username' => ($_POST['username']),
+                        'nom' => ($_POST['nom']),
+                        'prenom' => ($_POST['prenom']),
+                        'question' => ($_POST['question']),
+                        'reponse' => $reponseHashed,
+                        'id_user' => $dataAccountOld['id_user']
+                    ));
 
-                // Récupère les nouvelles valeurs de SESSION (fonction voir account)
-                $dataAccountNew = searchUser($pdo, $usernameNew);
+                    $usernameNew = $_POST['username'];
+                    $req_update_infos_user->closeCursor();
 
-                $_SESSION['nom'] = htmlspecialchars($dataAccountNew['nom']);
-                $_SESSION['prenom'] = htmlspecialchars($dataAccountNew['prenom']);
-                $_SESSION['username'] = htmlspecialchars($dataAccountNew['username']);
+                    // Récupère les nouvelles valeurs de SESSION (fonction voir account)
+                    $dataAccountNew = searchUser($pdo, $usernameNew);
 
-                $message = ACCOUNT_UPDATE;
-                header('Refresh: 5; url=parametres-compte.php');
+                    $_SESSION['nom'] = htmlspecialchars($dataAccountNew['nom']);
+                    $_SESSION['prenom'] = htmlspecialchars($dataAccountNew['prenom']);
+                    $_SESSION['username'] = htmlspecialchars($dataAccountNew['username']);
 
-            }
-            if (!$isPasswordCorrect) 
+                    $message = ACCOUNT_UPDATE;
+                    header('Refresh: 5; url=parametres-compte.php');
+
+                }
+                if (!$isPasswordCorrect) 
+                {
+                    $message = PASSWORD_WRONG;
+                }
+            } 
+            if (empty($_POST['nom']) OR empty($_POST['prenom']) OR empty($_POST['question']) OR empty($_POST['reponse']) OR empty($_POST['password']) OR empty($_POST['username'])) 
             {
-                $message = PASSWORD_WRONG;
+                $_SESSION['message']=  'ERREUR : veuillez remplir tous les champs !';
+                header('Location: parametres-compte.php'); exit;
             }
-        } 
-        if (empty($_POST['nom']) OR empty($_POST['prenom']) OR empty($_POST['question']) OR empty($_POST['reponse']) OR empty($_POST['password']) OR empty($_POST['username'])) 
+        }
+        if ($dataAccount AND $dataAccountOld['username'] != $_POST['username']) 
         {
-            $_SESSION['message']=  'ERREUR : veuillez remplir tous les champs !';
-            header('Location: parametres-compte.php'); exit;
+            $message = USERNAME_EXIST;
         }
     }
-    if ($dataAccount AND $dataAccountOld['username'] != $_POST['username']) 
-    {
-        $message = USERNAME_EXIST;
-    }
-}
 
-// CONNECTÉ:
-if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
-{
-    require_once '../header-footer/header.php';
+    // CONNECTÉ:
+    if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
+    {
+        require_once '../header-footer/header.php';
                     
-    ?>
+?>
                                                                         <!-- HTML FORMULAIRE INSCRIPTION  -->
 
     <main class="inscription-connexion">
