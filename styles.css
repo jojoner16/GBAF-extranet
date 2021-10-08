@@ -401,3 +401,245 @@ footer p
 	background-color: black;
 	color: white;
 }
+
+                               /* ------------------------------ Partenaire / Connecté------------------------------*/
+
+/* Section infos du partenaire */
+/* Logo du partenaire */
+.partenaire img 
+{
+	padding-top: 6%;
+	width: 35%;
+	display: block;
+	margin: auto;
+}
+/* titre partenaire */
+.partenaire h2
+{
+	font-size: 2em;	
+	margin-left: 1%;
+}
+/* Site du Partenaire */
+.partenaire a 
+{
+	display: block;
+	font-size: 0.85em;
+	text-decoration: underline;
+}
+/* description du Partenaire */
+.partenaire .text p 
+{
+	white-space: pre-wrap;
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	background-color: rgba(0, 0, 0, 0.02);
+ 	padding: 1.2em;
+	box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+	margin-bottom: 1%;
+}
+
+/* Section Commentaires */
+.commentaires 
+{
+	width: auto;
+	background-color: #f1f1f1;
+ 	padding: 4em;
+}
+.commentaires_dynamic 
+{
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	column-gap: 2em;
+	align-items: center;
+ 	margin-bottom: 2em;
+}
+/* Nombre de commentaire */
+.commentaires_dynamic h4 
+{
+	font-size: 1.2em;
+}
+/* Nouveau commentaire */
+/* boutton Nouveau commentaire */
+.new_commentaire
+{
+	box-shadow: -1px -2px 5px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.2);
+ 	padding: 0.5em; 
+	border-radius: 0.7em;
+	background-color: white;
+	cursor: pointer;
+}
+.new_commentaire:hover 
+{
+	box-shadow: inset -1px -2px 5px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+	color: rgba(0, 0, 0, 0.9);
+}
+.new_commentaire:active 
+{
+	box-shadow: inset -1px -2px 5px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+	color: rgba(0, 0, 0, 0.8);
+}
+/* checkbox */
+.new_commentaire input 
+{
+	display: none;
+}
+/* Formulaire Nouveau commentaire popup */
+.new_commentaire_formulaire 
+{
+	position: fixed;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	top: 6.6em;
+	right: 0;
+	width: 100%;
+	/* height: calc(100% - var(--header_height)); */
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 3;
+}
+.new_commentaire_formulaire p 
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 25em;
+	width: 40em;
+	margin: 0;
+ 	padding: 2em 4em 2em 4em;
+	margin-bottom: 3em;
+	background-color: white;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	z-index: 2;
+	border-radius: 5px;
+}
+/* Boutton close */
+.new_commentaire_formulaire p .close_popup 
+{
+	position: relative;
+	align-self: flex-end;
+	right: -2.5em;
+	top: -1em;
+	background: url(images/close-icon.png) center/contain no-repeat;
+	width: 1.25em;
+	height: 1.25em;
+	cursor: pointer;
+}
+.new_commentaire_formulaire p textarea 
+{
+    display: block;
+	padding: 0.8em;
+	font-family: Helvetica, serif;
+	color: rgba(0, 0, 0, 0.6);
+	height: 13.5em;
+	border: 0.1em solid;
+	background-color: rgba(0, 0, 0, 0.03);
+	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+	border: none;
+}
+/* Boutton envoi formulaire */
+.new_commentaire_formulaire p input 
+{
+    align-self: flex-end;
+    display: block;
+ 	padding: 0.2em 1em 0.2em 1em;
+	cursor: pointer;
+}
+#popup_button:checked + .new_commentaire_formulaire 
+{
+	display: flex;
+}
+/* Vote : Like / dislike */
+.commentaires_vote 
+{
+	display: flex;
+}
+/* boutons envoyer son vote */
+.vote_like, .vote_dislike 
+{
+	display: flex;
+	box-shadow: -1px -2px 5px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.2);
+	background-color: white;
+ 	padding: 0.4em 0.3em 0.4em 0.3em;
+	cursor: pointer;
+}
+.vote_like:hover, .vote_dislike:hover 
+{
+	box-shadow: inset -1px -2px 5px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.vote_like:active, .vote_dislike:active 
+{
+	box-shadow: inset -1px -2px 5px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.vote_like 
+{
+	border-top-left-radius: 0.7em;
+	border-bottom-left-radius: 0.7em;
+ 	margin-right: 0.2em;
+}
+.vote_dislike 
+{
+	border-top-right-radius: 0.7em;
+	border-bottom-right-radius: 0.7em;
+}
+/* Nombre de like ou dislike */
+.commentaires_vote p 
+{
+	width: 1.25em;
+	text-align: center;
+	line-height: 1.25em;
+}
+/* icone Nbr like ou dislike */
+.commentaires_vote img 
+{
+	width: 1.50em;
+	height: 1em;
+}
+
+/* liste des commentaires */
+.commentaires-list 
+{
+	padding: 0;
+	margin: 0;
+}
+.commentaires-list li 
+{
+	box-shadow: -1px -2px 5px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.2);
+	border-radius: 0.5em;
+	padding: 1.3em;
+	margin-bottom: 1em;
+	list-style: none;
+	background-color: white;
+}
+/* Nom */
+.commentaires-list li :nth-child(1) 
+{
+	color: DimGray;
+ 	margin-bottom: 0.2em;
+}
+/* Date */
+.commentaires-list li :nth-child(2) 
+{
+	color: DimGray;
+	font-size: 0.85em;
+ 	margin-bottom: 1em;
+	font-family: "Roboto", sans-serif;
+}
+/* commentaire */
+.commentaires-list li :last-child 
+{
+	font-family: Helvetica, serif;
+	font-size: 0.85em;
+	white-space: pre-wrap;
+}
+
+/* Aside retour page accueil*/
+.retour-accueil a 
+{
+	display: block;
+	width: 100%;
+ 	margin-top: 3em;
+	margin-bottom: 3em;
+	text-align: right;
+	font-size: 0.85em;
+	text-decoration: underline;
+}
