@@ -78,28 +78,26 @@
                             $message = PASSWORD_INVALID;
                         }
                 }
-
-                    // message : un des champs est vide
-                    if (empty($_POST['nom']) OR empty($_POST['prenom']) OR empty($_POST['username']) OR empty($_POST['password']) OR empty($_POST['question']) OR empty($_POST['reponse'])) 
-                    {
-                        //$message = EMPTY_FIELD;
-                        $_SESSION['message']=  'ERREUR : veuillez remplir tous les champs !';
-                        header('Location: inscription.php'); exit;
-                    }
-
-                    // message : l'username existe déja
-                    if ($dataAccount) 
-                    {
-                        $message = USERNAME_EXIST;
-                    }
+                // message : un des champs est vide
+                if (empty($_POST['nom']) OR empty($_POST['prenom']) OR empty($_POST['username']) OR empty($_POST['password']) OR empty($_POST['question']) OR empty($_POST['reponse'])) 
+                {
+                    //$message = EMPTY_FIELD;
+                    $_SESSION['message']=  'ERREUR : veuillez remplir tous les champs !';
+                    header('Location: inscription.php'); exit;
+                }
+                // message : l'username existe déja
+                if ($dataAccount) 
+                {
+                    $message = USERNAME_EXIST;
+                }
             }
         ?>
 
-                <!-- Page d'inscription HTML -->
+                                            <!-- Page d'inscription HTML -->
     <main class="inscription-connexion">
         <div class="form_container">
             <fieldset>
-                <legend>Créer un compte :</legend>
+                <legend>Créer un compte : </legend>
 
                 <!-- message erreur -->
                 <span class="message-erreur">
@@ -121,14 +119,10 @@
                         <label for="prenom">Prénom : </label>
                         <input type="text" id="prenom" name="prenom" size="30"/>
 
-                        <label for="question">
-                            Votre question secrète : 
-                        </label>
+                        <label for="question">Votre question secrète : </label>
                         <input type="text" id="question" name="question"/>
 
-                        <label for="reponse">
-                            La réponse a votre question : 
-                        </label>
+                        <label for="reponse">Réponse à votre question secrète : </label>
                         <input type="text" id="reponse" name="reponse"/>
 
                         <input class="button-envoyer" type="submit" name="dataSubmit" value="Envoyer"/>
@@ -139,13 +133,13 @@
                     </p>
                 </form>
 
-                <a href="index.php"> se connecter </a>
+                <a href="index.php"> Se connecter </a>
 
-                <a href="mp.php"> mot de passe oublié ? </a>
+                <a href="mp.php"> Mot de passe oublié ? </a>
             </fieldset>
         </div>
     </main>
     </body>
-        <?php
-            require_once 'header-footer/footer.php';
-        ?>
+<?php
+    require_once 'header-footer/footer.php';
+?>
