@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/jpg" href="images/logo1.png" />
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="css/connexion.css">
         <title>GBAF connexion</title>
     </head>
     <body>
@@ -96,13 +96,13 @@
                                 <span>Les champs indiqués par une <em>*</em> sont obligatoires</span>    
                             </p>
                         </form>
-                    <a href="mp.php"> mot de passe oublié ? </a>
-                    <a href="inscription.php"> créer un compte </a>
+                    <a href="mp.php"> Mot de passe oublié ? </a>
+                    <a href="inscription.php"> Créer un compte </a>
                 </fieldset>
             </div>
         </main>
     </body>
-        <?php 
-            require_once 'header-footer/footer.php';
-        ?>
+<?php 
+    require_once 'header-footer/footer.php';
+?>
  
