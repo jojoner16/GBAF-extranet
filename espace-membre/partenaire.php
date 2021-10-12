@@ -52,13 +52,12 @@
                 'acteur_id_acteur' => $dataActeur['id_acteur'],
                 'post' => ($_POST['post'])
             ));
-
             $req_insert_comment->closeCursor();
         }
     }
     if ($userHasComment) 
     {
-        $formComment = 'Vous avez déjà commenté';
+        $formComment = 'Vous avez déjà commenté !';
     }
 
     // C. Compte le nombre de commentaire sur l'acteur
@@ -93,25 +92,6 @@
     $userVote = $req_vote_user->fetch();
     $req_vote_user->closeCursor();
 
-    if (isset($userVote['vote'])) 
-    {
-        if ($userVote['vote'] == 'like') 
-        {
-            $iconeVoteLike = 'icone-like-active';
-            $iconeVoteDislike = 'icone-dislike';
-        } 
-        elseif ($userVote['vote'] == 'dislike') 
-        {
-            $iconeVoteLike = 'icone-like';
-            $iconeVoteDislike = 'icone-dislike-active';
-        }
-    }
-    if (!isset($userVote['vote'])) 
-    {
-        $iconeVoteLike = 'icone-like';
-        $iconeVoteDislike = 'icone-dislike';
-    }
-
     // F. Fonction qui affiche tous les commentaires sur l'acteur
     function listCommentaires($pdo, $idActeur)
     {
@@ -128,7 +108,6 @@
             echo '<p>' . htmlspecialchars($dataComment['comment'])  . '</p>';
             echo '</li>';
         }
-
         $req_comment->closeCursor();
     }
 
@@ -144,22 +123,33 @@
         <!-- A. Section infos de l'acteur -->
         <section class="partenaire">
             <?php
-                echo $dataActeur['logo'];
+                echo '<img src="../images/'.$dataActeur['logo'].'">';
                 echo '<h2>' . $dataActeur['acteur'] . '</h2>';
-                echo '<a href="' . $dataActeur['id_acteur'] . '">voir le site</a>';
                 echo '<div class="text"><p>' . $dataActeur['description'] . '</p></div>'
             ?>
         </section>
-
+            
         <!-- Section commentaires -->
         <section class="commentaires">
+
+            <!-- message erreur -->
+            <div class="message-erreur-vote">
+                <?php 
+                    if (isset($userVote['vote']))
+                    {
+                        $_SESSION['message']= 'Vous avez déjà voté !';
+                        echo $_SESSION['message'];
+                    }
+                ?>
+            </div>
+
             <div class="commentaires_dynamic">
                 <!-- C. Nombre de commentaires -->
                 <h4> 
                     <?php echo $nbrcommentsPosted; ?> 
                     commentaires 
                 </h4>
-
+                
                 <!-- Ajouter un nouveau commentaire -->
                 <div class="new_commentaire">
                     <label class="open_popup" for="popup_button">Nouveau commentaire</label>
@@ -187,13 +177,13 @@
                         </p>
 
                         <!-- E. icone like -->
-                        <img src="<?php echo '/images/' . $iconeVoteLike . '.png'; ?>" alt="like"/>
+                        <img src="<?php echo '../images/like.png'; ?>" alt="like"/>
                     </a>
 
                     <!-- Ajoute un dislike (vote) -->
                     <a class="vote_dislike" href="<?php echo 'vote.php?id_acteur=' . $dataActeur['id_acteur'] . '&vote=dislike'; ?>">
                         <!-- E. icone dislike -->
-                        <img  src="<?php echo '/images/' . $iconeVoteDislike . '.png'; ?>" alt="dislike"/>
+                        <img  src="<?php echo '../images/dislike.png'; ?>" alt="dislike"/>
 
                         <!-- D. Nombre de dislike -->
                         <p> 
@@ -208,13 +198,14 @@
                 <!--<li> -->
                 <?php listCommentaires($pdo, $idActeur); ?>
             </ul>
+            <div class="bouton">
+                <button class="retour-accueil">
+                    <a class="r-accueil" href="accueil.php">Retour à la page d'accueil</a>
+                </button>
+            </div>
         </section>
-
-        <aside class="retour-accueil">
-            <a href="accueil.php">retour à la page d'accueil</a>
-        </aside>
     </main>
-
+    
 <?php
     require_once('../header-footer/footer.php');
     }
