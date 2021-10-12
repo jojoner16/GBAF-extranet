@@ -110,8 +110,8 @@
                         <label for="pseudo">Identifiant : </label>
                         <input type="text" id="pseudo" name="username" size="20"/>
 
-                        <label for="mp">Mot de passe : </label>
-                        <input type="password" id="mp" name="password" size="20"/>
+                        <label for="mp">Mot de passe (minimum 4 caractères) : </label>
+                        <input type="password" id="mp" name="password" size="20" placeholder="1 minuscule,1 majuscule et 1 chiffre"/>
 
                         <label for="nom">Nom : </label>
                         <input type="text" id="nom" name="nom" size="30"/>
