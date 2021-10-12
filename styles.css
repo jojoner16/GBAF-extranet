@@ -168,7 +168,7 @@ header
 {
 	color: white;
 	text-shadow: 1px 1px 2px black;
-    background-color: #00000080;;
+    background-color: #00000080;
     display: flex;
     justify-content: space-between;
 	width: 100%;
@@ -233,7 +233,7 @@ header
 	text-decoration: underline;
 }
 
-/* ----- FOOTER -----*/
+/* --------------------------- FOOTER -------------------------------*/
 footer 
 {
     width: 100%;
@@ -645,7 +645,6 @@ button.retour-accueil
 	border-radius: 0.7em;
 	height: 2.5em; 
 	width: 15em;
-
 }
 button.retour-accueil:hover
 {
