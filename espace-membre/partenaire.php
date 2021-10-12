@@ -70,7 +70,6 @@
     // D. Fonction Compte le nombre de 'like' et 'Dislike' sur l'acteur
     function nbrLikeDislike($idActeur, $voteValue, $pdo)
     {
-
         $req_nbr_like_dislike = $pdo->prepare('SELECT COUNT(vote) as nombre FROM vote WHERE acteur_id_acteur = ? AND vote = ?');
 
         $req_nbr_like_dislike->bindValue(1, $idActeur, PDO::PARAM_INT);
@@ -147,7 +146,7 @@
                 <!-- C. Nombre de commentaires -->
                 <h4> 
                     <?php echo $nbrcommentsPosted; ?> 
-                    commentaires 
+                    commentaire(s) 
                 </h4>
                 
                 <!-- Ajouter un nouveau commentaire -->
@@ -158,7 +157,7 @@
                     <form class="new_commentaire_formulaire" method="post" action="#">
                         <p>
                             <label class="close_popup" for="popup_button"></label>
-                            <label for="post">Ajoutez un nouveau commentaire sur <em> <?php echo $dataActeur['acteur']; ?> </em>: </label>
+                            <label for="post">Ajoutez un nouveau commentaire sur <strong><em> <?php echo $dataActeur['acteur']; ?> </em></strong>: </label>
                             <textarea id="post" name="post">
                                 <?php echo $formComment; ?>
                             </textarea>
