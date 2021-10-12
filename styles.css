@@ -419,13 +419,6 @@ footer p
 	font-size: 2em;	
 	margin-left: 1%;
 }
-/* Site du Partenaire */
-.partenaire a 
-{
-	display: block;
-	font-size: 0.85em;
-	text-decoration: underline;
-}
 /* description du Partenaire */
 .partenaire .text p 
 {
@@ -553,6 +546,12 @@ footer p
 {
 	display: flex;
 }
+.message-erreur-vote
+{
+	text-align: right;
+	color: red;
+	font-size: 0.9em;
+}
 /* boutons envoyer son vote */
 .vote_like, .vote_dislike 
 {
@@ -620,7 +619,7 @@ footer p
 .commentaires-list li :nth-child(2) 
 {
 	color: DimGray;
-	font-size: 0.85em;
+	font-size: 0.9em;
  	margin-bottom: 1em;
 	font-family: "Roboto", sans-serif;
 }
@@ -628,18 +627,41 @@ footer p
 .commentaires-list li :last-child 
 {
 	font-family: Helvetica, serif;
-	font-size: 0.85em;
+	font-size: 0.9em;
 	white-space: pre-wrap;
 }
 
-/* Aside retour page accueil*/
-.retour-accueil a 
+/*Bouton retour page accueil*/
+.bouton
 {
-	display: block;
-	width: 100%;
- 	margin-top: 3em;
-	margin-bottom: 3em;
 	text-align: right;
-	font-size: 0.85em;
-	text-decoration: underline;
 }
+button.retour-accueil 
+{
+ 	margin-top: 1%;
+	box-shadow: -1px -2px 5px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.2);
+	border: none;
+	background-color: white;;
+	border-radius: 0.7em;
+	height: 2.5em; 
+	width: 15em;
+
+}
+button.retour-accueil:hover
+{
+	box-shadow: inset -1px -2px 5px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+button.retour-accueil:active
+{
+	box-shadow: inset -1px -2px 5px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+a.r-accueil 
+{
+	text-decoration: none;
+	font-size: 1.1em;
+	color: black;
+	font-family: Helvetica, serif;
+	font-weight: bold;
+}
+
+
