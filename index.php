@@ -101,7 +101,6 @@
                 </fieldset>
             </div>
         </main>
-    </body>
 <?php 
     require_once 'header-footer/footer.php';
 ?>
