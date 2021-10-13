@@ -12,9 +12,9 @@
         <div class="contain_all">
             <header>
 				<!-- Logo GBAF -->
-				<a class="header-logo" href="espace-membre/accueil.php">
+				<div class="header-logo">
 					<img id="logo" src="../images/logo.png" alt="Logo GBAF" />
-				</a>
+                </div>
                 
                 <?php // affiche le profil uniquement si un utilsateur est connecté
                 if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 

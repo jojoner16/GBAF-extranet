@@ -18,9 +18,9 @@
         <div class="contain_all">
             <header>
 				<!-- Logo GBAF -->
-				<a class="header-logo" href="espace-membre/accueil.php">
+				<div class="header-logo">
 					<img id="logo" src="images/logo1.png" alt="Logo GBAF" />
-				</a>
+                </div>
             </header>
         </div>
 
