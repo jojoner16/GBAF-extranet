@@ -15,8 +15,9 @@ html, body
 	justify-content: center;
     width: 100%;
  	height: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
 	padding-top: 2%;
+	background: url('images/banque.jpg') center /cover no-repeat;
+	background-attachment: fixed
 }
 
 /* Section */
@@ -50,7 +51,7 @@ html, body
     display: block;
     margin-bottom: 1em;
 	color: red;
-	font-size: 0.81em;
+	font-size: 0.9em;
 	text-align: center;
 }
 
@@ -141,7 +142,7 @@ input:focus
     display: block;
 	align-self: center;
 	color: red;
-	font-size: 0.7em !important;
+	font-size: 0.9em !important;
  	margin: 0.5em 0 0 0 !important;
 }
 
