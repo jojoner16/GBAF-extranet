@@ -1,5 +1,4 @@
 <?php 
-    //session_start();
     // Chargement des fonctions génériques
     require_once 'php/fonction.php';
     $pdo = connect_bdd();
@@ -12,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/jpg" href="images/logo1.png" />
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="css/connexion.css">
         <title>GBAF inscription</title>
     </head>
     
@@ -35,7 +34,6 @@
                 header('Location: espace-membre/accueil.php');
                 exit();
             }
-
 
             // Si on envoi le formulaire
             if (isset($_POST['dataSubmit'])) 
@@ -139,7 +137,6 @@
             </fieldset>
         </div>
     </main>
-    </body>
 <?php
     require_once 'header-footer/footer.php';
 ?>
