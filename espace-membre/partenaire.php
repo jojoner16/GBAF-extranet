@@ -206,6 +206,6 @@
     </main>
     
 <?php
-    require_once('../header-footer/footer.php');
+    require_once '../header-footer/footer.php';
     }
 ?>
