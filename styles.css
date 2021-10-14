@@ -487,7 +487,6 @@ footer p
 	top: 6.6em;
 	right: 0;
 	width: 100%;
-	/* height: calc(100% - var(--header_height)); */
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 3;
 }
@@ -664,4 +663,309 @@ a.r-accueil
 	font-weight: bold;
 }
 
+/*------------------- responsive ------------------------*/
 
+/* header */
+@media only screen and (min-width: 1025px)  
+{
+    header
+	{
+        position: sticky;
+    }
+}
+
+/* Liste acteurs adaptatif */
+@media only screen and (max-width: 1025px) 
+{
+	/* Article Liste des acteurs + navigation */
+	.acteur_seul 
+	{
+		height: auto;
+	}
+	.acteur_seul 
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+ 		padding: 1em;
+	}
+	/* Logos / Nom / Description Acteurs */
+	.acteur_seul img, .acteur_seul h3, .acteur_seul div 
+	{
+        display: block;
+ 		margin-bottom: 1em;
+	}
+	/* Nom Acteurs */
+	.acteur_seul h3 
+	{
+		align-self: flex-start;
+	}
+	/* première ligne description acteur */
+	.acteur-seul_description p:first-of-type 
+	{
+		overflow: visible;
+		white-space: normal;
+	}
+	/* bouton "Lire la suite" */
+	.acteur_seul :nth-child(4) 
+	{
+		margin: 0;
+		align-self: flex-end;
+	}
+}
+
+/* ----------------Mobile------------------- */
+
+@media only screen and (max-width: 480px) 
+{
+	h1 
+	{
+		font-size: 1.5em;
+	}
+	h2 
+	{
+		font-size: 1.3em;
+    }
+    h4
+	{
+        font-size: 0.89em;
+
+    }
+    html 
+	{ 
+		min-height: 100vh;
+	}
+    body 
+	{
+        font-size: 13px;
+        min-height: 100vh;
+    }
+	/* --HEADER-- */
+	header 
+	{
+        flex-direction: column;
+        align-items:center;
+	}
+	div.header-logo
+	{
+		text-align: center;
+	}
+	header:after 
+	{
+		content: "";
+		margin-top: 0.5em;
+	}
+	/* Profil*/
+	.header-profil 
+	{
+		position: initial;
+		text-align: center;
+	}
+	/* Nom Prénom */
+	.profil_nom 
+	{
+		justify-content: center;
+		font-size: 1.2em;
+	}
+	/* bouton Déconnexion & Modifier le profil */
+	.header-profil a 
+	{
+		display: none;
+    }
+	/* bouton deconnexion */
+	.header-profil li:nth-child(2) 
+	{
+		position: absolute;
+		display: block;
+		top: 0;
+		right: 0;
+		margin: 1em;
+		overflow: hidden;
+	}
+	.header-profil li:nth-child(2) a 
+	{
+		display: block;
+		width: 2.3em;
+		height: 2.3em;
+		color: #757674;
+		text-shadow: none;
+    }
+	.header-profil li:nth-child(2):hover .header-profil li:last-child
+	{
+        opacity: 0;
+	}
+	.header-profil li:nth-child(2) a::before 
+	{
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		background: url(images/deconnexion.png) center / cover no-repeat;
+		background-color: rgba(255, 255, 255, 0.7);
+		border-radius: 20px;
+		padding: 0.5%;
+		width: 2.3em;
+		height: 2.3em;
+    }
+	/*  bouton modifier son profil*/
+	.header-profil li:last-child 
+	{
+		position: relative;
+		top: -1.7em;
+		opacity: 0;
+	}
+	/* ----------------------- MAIN & SECTIONS & ARTICLES $ TEXTES -----------------------*/
+	main 
+	{
+        width: 100%;
+    }
+	/* ------------------------------ Accueil Connecté------------------------------*/
+
+	/* Section Présentation Acteurs / Partenaires */
+	/* Section Présentation GBAF */
+	.GBAF
+	{
+		padding-top: 45%;
+		height: 72em;
+	}
+	.GBAF-illustration img 
+	{
+		right: 0.5em;
+		bottom: 0.5em;
+		width: 2.5em;
+	}
+	/* Article Liste des acteurs + navigation */
+	.acteur_seul 
+	{
+		height: auto;
+	}
+	.acteur_seul 
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		padding: 1em;
+	}
+	.partenaire a 
+	{
+		margin-bottom: 1em;
+	}
+	/* Logos / Nom / Description Acteurs */
+	.acteur_seul img, .acteur_seul h3, .acteur_seul div 
+	{
+		margin-bottom: 1em;
+	}
+	/* Nom Acteurs */
+	.acteur_seul h3 
+	{
+		align-self: flex-start;
+	}
+	/* première ligne description acteur */
+	.acteur-seul_description p:first-of-type 
+	{
+		overflow: visible;
+		white-space: normal;
+	}
+	/* bouton "Lire la suite" */
+	.acteur_seul :nth-child(4) 
+	{
+		margin: 0;
+		align-self: flex-end;
+	}
+
+	/* -----------------------  FOOTER ------------------------*/
+	footer p 
+	{
+		font-size: 1em;
+		line-height: 3em;
+	}
+	/* ------------------------------ Partenaire Connecté------------------------------*/
+	.partenaire
+	{
+		padding-top: 30%;
+	}
+	.partenaire img 
+	{
+		width: 90%;
+	}
+	/* Section Commentaires */
+	.commentaires 
+	{
+		border-radius: 0.9em;
+		padding: 1em;
+	}
+	.commentaires_dynamic 
+	{
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 1fr 2fr;
+		column-gap: 1em;
+		row-gap: 1em;
+	}
+	/* Nombre de commentaire */
+	.commentaires_dynamic h4 
+	{
+		grid-column: 1 / span 2;
+		grid-row: 1/2;
+		margin: 0;
+	}
+	/* Formulaire Nouveau commentaire popup */
+	.new_commentaire_formulaire 
+	{
+		height: 100%;
+		top: 0;
+		bottom: 0;
+	}
+	/* Formulaire Nouveau commentaire popup */
+	.new_commentaire_formulaire p 
+	{
+		height: 28em;
+		margin: 0;
+		width: 92%;
+		padding: 1em 2em 1em 2em;
+    }
+    /* Bouton open */
+    .open_popup
+	{
+        font-size: 1em;
+        display: block;
+        text-align: center;
+    }
+	/* Boutton close */
+	.new_commentaire_formulaire p .close_popup 
+	{
+		right: -1em;
+		top: -0.2em;
+	}
+	.new_commentaire_formulaire p textarea 
+	{
+		height: 17em;	
+		font-size: 1em;
+	}
+	.new_commentaire_formulaire p label:nth-child(2) 
+	{
+		line-height: 1.5em;
+	}
+	/* Boutton envoi formulaire */
+	.new_commentaire_formulaire p input 
+	{
+		border: none;
+		padding: 0.5em 1em 0.5em 1em;
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+	/* Vote : Like / dislike */
+	.commentaires_vote 
+	{
+		grid-column: 2/3;
+		grid-row: 2/3;
+		justify-self: end;
+	}
+	button.retour-accueil 
+	{
+		width: 10em;
+		font-size: 0.8em;
+	}
+
+}
