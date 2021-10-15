@@ -665,56 +665,6 @@ a.r-accueil
 
 /*------------------- responsive ------------------------*/
 
-/* header */
-@media only screen and (min-width: 1025px)  
-{
-    header
-	{
-        position: sticky;
-    }
-}
-
-/* Liste acteurs adaptatif */
-@media only screen and (max-width: 1025px) 
-{
-	/* Article Liste des acteurs + navigation */
-	.acteur_seul 
-	{
-		height: auto;
-	}
-	.acteur_seul 
-	{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: stretch;
- 		padding: 1em;
-	}
-	/* Logos / Nom / Description Acteurs */
-	.acteur_seul img, .acteur_seul h3, .acteur_seul div 
-	{
-        display: block;
- 		margin-bottom: 1em;
-	}
-	/* Nom Acteurs */
-	.acteur_seul h3 
-	{
-		align-self: flex-start;
-	}
-	/* première ligne description acteur */
-	.acteur-seul_description p:first-of-type 
-	{
-		overflow: visible;
-		white-space: normal;
-	}
-	/* bouton "Lire la suite" */
-	.acteur_seul :nth-child(4) 
-	{
-		margin: 0;
-		align-self: flex-end;
-	}
-}
-
 /* ----------------Mobile------------------- */
 
 @media only screen and (max-width: 480px) 
@@ -816,7 +766,7 @@ a.r-accueil
 		top: -1.7em;
 		opacity: 0;
 	}
-	/* ----------------------- MAIN & SECTIONS & ARTICLES $ TEXTES -----------------------*/
+	/* ----------------------- MAIN -----------------------*/
 	main 
 	{
         width: 100%;
@@ -828,7 +778,7 @@ a.r-accueil
 	.GBAF
 	{
 		padding-top: 45%;
-		height: 72em;
+		height: 142vh;
 	}
 	.GBAF-illustration img 
 	{
