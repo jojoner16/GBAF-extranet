@@ -22,7 +22,5 @@ function connect_bdd()
 	{
 		die('Erreur : '.$e->getMessage());
 	}
-    
 }
-
 ?>
