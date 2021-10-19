@@ -19,7 +19,6 @@ html, body
 	background: url('images/banque.jpg') center /cover no-repeat;
 	background-attachment: fixed
 }
-
 /* Section */
 .form_container 
 {
@@ -40,7 +39,6 @@ html, body
     padding: 0;
     border:none;
 }
-
 /* Legende formulaire*/
 .form_container fieldset legend 
 {
@@ -54,7 +52,6 @@ html, body
 	font-size: 0.9em;
 	text-align: center;
 }
-
 /* Formulaires */
 .form_container form p 
 {
@@ -85,7 +82,6 @@ input:focus
 {
 	box-shadow: inset -1px -2px 2px rgba(255, 255, 255, 0.6), inset 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
-
 /* Bouton envoyer */
 .form_container form p .button-envoyer 
 {
@@ -135,7 +131,6 @@ input:focus
 	margin-top: 0.2em;
 	font-size: 1em;
 }
-
 /* * */
 .form_container form p span 
 {
@@ -145,7 +140,6 @@ input:focus
 	font-size: 0.9em !important;
  	margin: 0.5em 0 0 0 !important;
 }
-
 /* liens vers index ou accueil .. */
 .form_container fieldset a 
 {
@@ -164,7 +158,7 @@ input:focus
 	margin-bottom: 0;
 }
 
-             /* page connecté/ header */
+             /*--------- page connecté/ header ----------*/
 header
 {
 	color: white;
@@ -184,7 +178,6 @@ header
 	margin-top: 0.2em;
 	border-radius: 5px;
 }
-
 /* Profil*/
 .header-profil 
 {
@@ -194,7 +187,6 @@ header
     margin: 0;
 	padding: 0;
 }
-
 /* Icone profil */
 .profil_nom::before 
 {
@@ -206,7 +198,6 @@ header
 	background: url(images/login.jpg) center/contain no-repeat;
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 15px;
-
 }
 /* Nom Prénom */
 .profil_nom 
@@ -250,7 +241,6 @@ footer p
 }
 
      /* ---- Accueil / Connecté ----*/
-
 /* Section Présentation GBAF */
 .GBAF
 {
@@ -373,7 +363,6 @@ footer p
 	overflow: hidden;
 }
 /* Description Acteurs première ligne */
-
 .acteur-seul_description ul, .acteur-seul_description p ~ p 
 {
 	display: none;
@@ -431,7 +420,6 @@ footer p
 	box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
 	margin-bottom: 1%;
 }
-
 /* Section Commentaires */
 .commentaires 
 {
@@ -593,7 +581,6 @@ footer p
 	width: 1.50em;
 	height: 1em;
 }
-
 /* liste des commentaires */
 .commentaires-list 
 {
@@ -630,7 +617,6 @@ footer p
 	font-size: 0.9em;
 	white-space: pre-wrap;
 }
-
 /*Bouton retour page accueil*/
 .bouton
 {
@@ -666,7 +652,6 @@ a.r-accueil
 /*------------------- responsive ------------------------*/
 
 /* ----------------Mobile------------------- */
-
 @media only screen and (max-width: 480px) 
 {
 	h1 
@@ -799,10 +784,6 @@ a.r-accueil
 		align-items: stretch;
 		padding: 1em;
 	}
-	.partenaire a 
-	{
-		margin-bottom: 1em;
-	}
 	/* Logos / Nom / Description Acteurs */
 	.acteur_seul img, .acteur_seul h3, .acteur_seul div 
 	{
@@ -917,5 +898,81 @@ a.r-accueil
 		width: 10em;
 		font-size: 0.8em;
 	}
+}
 
+/*-------------------- tablette ------------------*/
+@media only screen and (min-width: 480px) and (max-width: 1024px)  
+{
+	/* ------------------------------ Accueil Connecté------------------------------*/
+	/* Section Présentation GBAF */
+	.GBAF 
+	{
+		padding-top: 15%;
+		height: 73vh;
+	}
+	.GBAF-illustration img 
+	{
+		right: 0.8em;
+		bottom: 0.5em;
+		width: 2em;
+	}
+	/* Article Liste des acteurs + navigation */
+	.acteur_seul 
+	{
+		display: grid;
+		grid-template-columns: 240px 2fr 150px;
+		grid-template-rows: 1fr 2em 1fr;
+		grid-template-areas:
+			"logo nom nom"
+			"logo infos infos"
+			"logo . button";
+		height: auto;
+		padding: 1em;	
+	}
+    /* Nom / Description Acteurs */
+    .acteur_seul h3, .acteur_seul div 
+	{
+        margin-bottom: 1em;
+    }
+    /* Nom Acteurs */
+    .acteur_seul h3 
+	{
+        align-self: flex-start;
+    }
+    /* bouton "Lire la suite" */
+    .acteur_seul :nth-child(4) 
+	{
+    	margin: 0;
+    	align-self: flex-end;
+    }
+		/* ------------------------------ Partenaire Connecté------------------------------*/
+	.partenaire
+	{
+		padding-top: 8%;
+	}
+	.partenaire img 
+	{
+		width: 60%;
+	}
+	/* Formulaire Nouveau commentaire popup */
+	.new_commentaire_formulaire 
+	{
+		height: 50%;
+		top: 35%;
+		bottom: 0;
+	}
+	/* Formulaire Nouveau commentaire popup */
+	.new_commentaire_formulaire p 
+	{
+		height: 28em;
+		margin: 0;
+		width: 82%;
+		padding: 1em 2em 1em 2em;
+    }
+	/* Boutton close */
+	.new_commentaire_formulaire p .close_popup 
+	{
+		right: -1em;
+		top: -1.8em;
+	}
 }

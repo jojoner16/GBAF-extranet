@@ -38,6 +38,7 @@ footer p
 	text-align: center;
 	line-height: 3em;
 }
+/*----------- main ----------*/
 main
 {
     width: 100%;
@@ -57,7 +58,6 @@ main
 /* Section */
 .form_container 
 {
-	/* min-width: 350px; */
     width: 400px;
 	background-color: #ebebebbb;
 	border-radius: 0.4em;
@@ -116,7 +116,6 @@ input:focus
 {
 	box-shadow: inset -1px -2px 2px rgba(255, 255, 255, 0.6), inset 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
-
 /* Bouton envoyer */
 .form_container form p .button-envoyer 
 {
@@ -166,7 +165,6 @@ input:focus
 	margin-top: 0.2em;
 	font-size: 1em;
 }
-
 /* * */
 .form_container form p span 
 {
@@ -197,7 +195,6 @@ input:focus
 /*------------------- responsive ------------------------*/
 
 /* ----------------Mobile------------------- */
-
 @media only screen and (max-width: 480px) 
 {
 	html 
@@ -228,8 +225,18 @@ input:focus
 	{
 		margin-top: 21%;
 	}
+	/*--- main --- */
 	.inscription-connexion 
 	{
         font-size: 1.1em;
+	}
+}
+
+/* ----------------Tablette------------------- */
+@media only screen and (min-width: 480px) and (max-width: 1024px)  
+{
+	html, body
+	{ 
+		height: 94.9vh;
 	}
 }
