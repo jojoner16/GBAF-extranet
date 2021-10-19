@@ -55,7 +55,6 @@
 
                     $message = ACCOUNT_UPDATE;
                     header('Refresh: 5; url=parametres-compte.php');
-
                 }
                 if (!$isPasswordCorrect) 
                 {
@@ -127,7 +126,7 @@
         </div>
     </main>
 
-    <?php
-        require_once '../header-footer/footer.php';
+<?php
+    require_once '../header-footer/footer.php';
 }
-    ?>
+?>
