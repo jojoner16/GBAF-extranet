@@ -44,14 +44,12 @@
     // CONNECTÉ:
 if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
 {
-
     require_once '../header-footer/header.php';
     
         ?>
-        
                   <!-- Page accueil -->
         <main>
-            
+
             <!-- Section Présentation GBAF -->
             <section class="GBAF">
                 <h1>GBAF (Groupement Banque Assurance Français)</h1>
@@ -142,8 +140,8 @@ if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id
             </section>
         </main>
    
-    <?php 
-        require_once '../header-footer/footer.php';
+<?php 
+    require_once '../header-footer/footer.php';
 }
-    ?>
+?>
   
