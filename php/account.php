@@ -41,8 +41,7 @@
         unset($_SESSION['message']);
     }
 
-    define("USERNAME_UNKNOWN",      "Cet identifiant n'existe pas");
-    //define("EMPTY_FIELD",           "Veuillez remplir tous les champs");  
+    define("USERNAME_UNKNOWN",      "Cet identifiant n'existe pas");  
     define("PASSWORD_WRONG",        "Ce n'est pas le bon mot de passe !");
     define("PASSWORD_INVALID",      "Le mot de passe doit contenir au moins 4 caractères, dont une minuscule, une majuscule et un chiffre");
     define("ACCOUNT_UPDATE",        "Vos changements ont bien été pris en compte");
@@ -62,7 +61,6 @@
         if (isset($_POST['dataSubmit']))
         {
             echo htmlspecialchars($_POST[$valuePost_Session]);
-
         } 
         elseif (isset($_SESSION[$valuePost_Session])) 
         {
