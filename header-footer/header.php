@@ -17,8 +17,8 @@
                 </div>
                 
                 <?php // affiche le profil uniquement si un utilsateur est connecté
-                if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
-                {
+                    if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['id_user'])) 
+                    {
                 ?>
 
                 <!-- Profil -->
@@ -40,7 +40,7 @@
                     </li>
                 </ul>
                 <?php
-                }
+                    }
                 ?>
             </header>
         </div>
